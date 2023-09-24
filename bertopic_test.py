@@ -121,7 +121,8 @@ if user_text:
 
         ## Display article titles and pubmed links
         ##
-        st.title("Articles and PubMed links:")
+        st.title("BERTopic App Search Results:")
+        st.markdown('[Click Here](https://pubmed.ncbi.nlm.nih.gov/?term=%28%28oxycontin%29+AND+%28marketing%29%29+AND+%28advertising%29&sort=&filter=simsearch1.fha) to see PubMed resutls for the same search."))
 
         for row in df[df.topic.isin(findings_frame.topic.tolist())].itertuples():
             st.write(f"{row.title}")
