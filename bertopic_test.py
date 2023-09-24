@@ -26,7 +26,7 @@ st.image("data/forest_trees.jpg")
 
 st.write("This is a demo of a sentence transformer based search engine for discovering articles with topics similar to user input text among a corpus of 3,747 abstracts drawn from a PubMed search for the word 'Oxycontin.'")
 st.write("The demo uses the Python library BERTopic to embed the user input text and compare it to a pre-trained model.  All embeddings are conducted with the paraphrase-MiniLM-L6-v2 language model.")
-st.write("It is important to note that the code generating these results makes no use of MeSH terms or any other categorization within PubMed metadata.  These results are soley the result of sentence transformations, dimension reduction, clustering, and topic extraction using the BERTopic library and selected language model.")
+st.write("It is important to note that the code generating these results makes no use of MeSH terms or any other categorization within PubMed metadata.  These results are solely the result of sentence transformations, dimension reduction, clustering, and topic extraction using the BERTopic library and selected language model.")
  
 # components.iframe('/content/drive/MyDrive/a_datasets/hierarch_cluster.html')
 
