@@ -28,10 +28,9 @@ st.write("This is a demo of a sentence transformer based search engine for disco
 st.write("The demo uses the Python library BERTopic to embed the user input text and compare it to a pre-trained model.  All embeddings are conducted with the paraphrase-MiniLM-L6-v2 language model.")
 st.write("It is important to note that the code generating these results makes no use of MeSH terms or any other categorization within PubMed metadata.  These results are solely the result of sentence transformations, dimension reduction, clustering, and topic extraction using the BERTopic library and selected language model.")
  
-# components.iframe('/content/drive/MyDrive/a_datasets/hierarch_cluster.html')
 
 # Text input from the user
-user_text = st.text_area("Enter text you'd like to find articles about here:")
+user_text = st.text_area("Enter text you'd like to find Oxycontin articles about here:")
 
 if user_text:
     # Extract topics from the user-provided text
@@ -44,10 +43,14 @@ if user_text:
     try:
         st.header(f"{len(df[df.topic.isin(findings_frame.topic.tolist())])} Articles with Similar Themes:")
 
+        ## Create wordcloud based on TF-IDF of each of the matching topic clusters
+        ##
+
         st.set_option('deprecation.showPyplotGlobalUse', False)     
         topic_wc, prob_wc = topic_model.find_topics(user_text)
         findings_frame = pd.DataFrame({'topic_wc':topic_wc,'prob_wc':prob_wc})
         findings_frame = findings_frame[findings_frame.prob_wc>0.1]
+
         def create_wordcloud(model, topic_wc):
             text = {}
             for t in  topic_wc:
@@ -61,13 +64,17 @@ if user_text:
             # plt.show()
         wc_fig = create_wordcloud(topic_model, topic_wc=findings_frame.topic_wc.tolist())
 
+        ## Display word cloud
+        ##
+
         st.write("Word cloud based on TF-IDF of the clusters of articles with themes that matched the entered text:")
         st.pyplot(wc_fig)
 
+        ## Create line plot of articles from matching themes per year
+        ##
 
         # Convert the date column to a pandas datetime object
         df['date'] = pd.to_datetime(df['date'])
-
 
         # Filter dataframe down to only entries in the topics that match the user_text
         topic, prob = topic_model.find_topics(user_text)
@@ -77,10 +84,6 @@ if user_text:
 
         # Extract the month and year from the date column
         df['Year'] = df['date'].dt.year
-
-
-
-
 
         # Group by Year and count the rows
         yearly_row_counts = df.groupby(['Year']).size().reset_index(name='Article Count')
@@ -108,15 +111,11 @@ if user_text:
 
         fig.update_yaxes(title_text='Article Count')
 
-
-
-
-
-
         st.plotly_chart(fig, use_container_width=True)
 
+        ## Display article titles and pubmed links
+        ##
         st.title("Articles and PubMed links:")
-
 
         for row in df[df.topic.isin(findings_frame.topic.tolist())].itertuples():
             st.write(f"{row.title}")
