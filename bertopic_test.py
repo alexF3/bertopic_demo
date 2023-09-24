@@ -47,7 +47,7 @@ if user_text:
     findings_frame = findings_frame[findings_frame.prob>0.1]
 
     try:
-        st.header(f"{len(df[df.topic.isin(findings_frame.topic.tolist())])} Articles with Similar Themes:")
+        st.header(f"BERTopic Search Found {len(df[df.topic.isin(findings_frame.topic.tolist())])} Articles with Similar Themes:")
 
         ## Create wordcloud based on TF-IDF of each of the matching topic clusters
         ##
@@ -107,7 +107,7 @@ if user_text:
             yearly_row_counts,
             x='Year',
             y='Article Count',
-            title='In-Theme Article Counts by Year',
+            title='In-Theme Article Counts by Year via BERTopic Search',
             hover_data=['Hover Text']
         )
 
