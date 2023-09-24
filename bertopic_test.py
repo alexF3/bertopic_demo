@@ -31,7 +31,7 @@ st.write("It is important to note that the code generating these results makes n
 ## Demo (optional)
 ##
 st.header("Try an experiment:") 
-st.write('In the search box below, type "Oxycontin marketing and advertising"')
+st.write('In the search box below, type "marketing and advertising" to search this corpus of Oxycontin articles')
 st.markdown("Once you've evaluated the results, take a look at a [PubMed search](https://pubmed.ncbi.nlm.nih.gov/?term=%28%28oxycontin%29+AND+%28marketing%29%29+AND+%28advertising%29&sort=&filter=simsearch1.fha) for the same terms")
 st.write('Which do you find more useful?')
 
