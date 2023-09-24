@@ -27,7 +27,13 @@ st.image("data/forest_trees.jpg")
 st.write("This is a demo of a sentence transformer based search engine for discovering articles with topics similar to user input text among a corpus of 3,747 abstracts drawn from a PubMed search for the word 'Oxycontin.'")
 st.write("The demo uses the Python library BERTopic to embed the user input text and compare it to a pre-trained model.  All embeddings are conducted with the paraphrase-MiniLM-L6-v2 language model.")
 st.write("It is important to note that the code generating these results makes no use of MeSH terms or any other categorization within PubMed metadata.  These results are solely the result of sentence transformations, dimension reduction, clustering, and topic extraction using the BERTopic library and selected language model.")
- 
+
+## Demo (optional)
+##
+st.header("Try an experiment:") 
+st.write('In the search box below, type "Oxycontin marketing and advertising"')
+st.markdown("Once you've evaluated the results, take a look at a [PubMed search](https://pubmed.ncbi.nlm.nih.gov/?term=%28%28oxycontin%29+AND+%28marketing%29%29+AND+%28advertising%29&sort=&filter=simsearch1.fha) for the same terms")
+st.write('Which do you find more useful?')
 
 # Text input from the user
 user_text = st.text_area("Enter text you'd like to find Oxycontin articles about here:")
