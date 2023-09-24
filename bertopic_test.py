@@ -12,17 +12,17 @@ import matplotlib.pyplot as plt
 model = SentenceTransformer("paraphrase-MiniLM-L6-v2")
 
 # Load a pre-trained BERTopic model (you can replace this with your own trained model)
-# topic_model = BERTopic.load("/data/bertopic_model_oxycontin_pos",model)
+topic_model = BERTopic.load("data/bertopic_model_oxycontin_pos",model)
 
 # Load the original csv from which the model was transformed
-df = pd.read_csv('/data/oxycontin_with_topics_pos.csv')
+df = pd.read_csv('data/oxycontin_with_topics_pos.csv')
 df['date'] = pd.to_datetime(df['date'])
 
 
 # Streamlit App
 st.title("BERTopic Med Journal Article Theme Extraction")
 
-st.image("/data/forest_trees.jpg")
+st.image("data/forest_trees.jpg")
 
 st.write("This is a demo of a sententce transformer based search engine for discovering articles with topics similar to user input text among a corpus of 3,747 abstracts drawn from a PubMed search for the word 'Oxycontin.'")
 st.write("The demo uses the Python library BERTopic to embed the user input text and compare it to a pre-trained model.  All embeddings are conducted with the paraphrase-MiniLM-L6-v2 language model.")
