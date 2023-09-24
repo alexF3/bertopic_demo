@@ -12,7 +12,7 @@ import matplotlib.pyplot as plt
 model = SentenceTransformer("paraphrase-MiniLM-L6-v2")
 
 # Load a pre-trained BERTopic model (you can replace this with your own trained model)
-topic_model = BERTopic.load("/data/bertopic_model_oxycontin_pos",model)
+# topic_model = BERTopic.load("/data/bertopic_model_oxycontin_pos",model)
 
 # Load the original csv from which the model was transformed
 df = pd.read_csv('/data/oxycontin_with_topics_pos.csv')
