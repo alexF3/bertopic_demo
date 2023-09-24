@@ -4,7 +4,7 @@ This is a demo implementation of a web app for searching for thematic trends ove
 
 ## Key Takeaways:
 
-* This code could run on a secure, air-gap-ed instance.  All dependencies can be downloaded and run locally or on a VPC
+* This code could run on a secure, air-gapped instance.  All dependencies can be downloaded and run locally or on a VPC
 * This approach is modular.  The language model used for sentence transformation can be replaced as better models become available.
 * This approach is flexible and tunable with very low effort and relatively little time (though it does require access to GPUs).
 * LLMs can be used in fine tuning if desired to make topic names more readable and to generate brief summaries of each topic cluster
