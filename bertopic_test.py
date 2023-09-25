@@ -25,7 +25,7 @@ st.title("BERTopic Med Journal Article Theme Extraction")
 st.image("data/forest_trees.jpg")
 
 st.write("This is a demo of a topic modeling library using a pre-trained language model to surface articles with topics similar to user input text among a corpus of 3,747 abstracts drawn from a PubMed search for the word 'Oxycontin.'")
-st.markup("You can read more about how this works in the [BERTopic Documentation](https://maartengr.github.io/BERTopic/index.html)]")
+st.markdown("You can read more about how this works in the [BERTopic Documentation](https://maartengr.github.io/BERTopic/index.html)]")
 ## Demo example
 ##
 st.header("Try an experiment:") 
