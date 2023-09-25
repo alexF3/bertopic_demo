@@ -26,6 +26,8 @@ st.image("data/forest_trees.jpg")
 
 st.write("This is a demo of a topic modeling library using a pre-trained language model to surface articles with topics similar to user input text among a corpus of 3,747 abstracts drawn from a PubMed search for the word 'Oxycontin.'")
 st.markdown("You can read more about how this works in the [BERTopic Documentation](https://maartengr.github.io/BERTopic/index.html).")
+st.write("This approach often works better than more traditional NLP algorithms and requires a lot less pre-processing. Check out the results for yourself!")
+
 ## Demo example
 ##
 st.header("Try an experiment:") 
