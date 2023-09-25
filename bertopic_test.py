@@ -24,11 +24,9 @@ st.title("BERTopic Med Journal Article Theme Extraction")
 
 st.image("data/forest_trees.jpg")
 
-st.write("This is a demo of a sentence transformer based search engine for discovering articles with topics similar to user input text among a corpus of 3,747 abstracts drawn from a PubMed search for the word 'Oxycontin.'")
-st.write("The demo uses the Python library BERTopic to embed the user input text and compare it to vectors of each of the 3,747 documents in the corpus created by the same sentence transformer.  All embeddings are conducted with the paraphrase-MiniLM-L6-v2 language model.")
-st.write("This approach is particularly useful because it retains the context of each word in a document.  Other NLP tools ignore word order, but with BERTopic 'Man bites dog' encodes differently from 'Dog bites man.'  This makes it possible to extract more accurate topics.")
-st.write("It is important to note that the code generating these results makes no use of MeSH terms or any other categorization within PubMed metadata.")
-## Demo (optional)
+st.write("This is a demo of a topic modeling library using a pre-trained language model to surface articles with topics similar to user input text among a corpus of 3,747 abstracts drawn from a PubMed search for the word 'Oxycontin.'")
+st.markup("You can read more about how this works in the [BERTopic Documentation](https://maartengr.github.io/BERTopic/index.html)]")
+## Demo example
 ##
 st.header("Try an experiment:") 
 st.markdown('* In the search box below, type "marketing and advertising" to search this corpus of Oxycontin articles')
