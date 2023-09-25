@@ -32,7 +32,7 @@ st.write("This approach often works better than more traditional NLP algorithms 
 ##
 st.header("Try an experiment:") 
 st.markdown('* Type "marketing and advertising" into the search box to explore the Oxycontin article corpus')
-st.markdown("* Once you've evaluated the results, take a look at a [PubMed search](https://pubmed.ncbi.nlm.nih.gov/?term=%28%28oxycontin%29+AND+%28marketing%29%29+AND+%28advertising%29&sort=&filter=simsearch1.fha) for the Oxycontin marketing and advertising.")
+st.markdown("* Compare thoes results to what you'd get from a [PubMed search](https://pubmed.ncbi.nlm.nih.gov/?term=%28%28oxycontin%29+AND+%28marketing%29%29+AND+%28advertising%29&sort=&filter=simsearch1.fha) for the Oxycontin marketing and advertising.")
 st.header('**Which do you find more useful?** :i_love_you_hand_sign:')
 st.write('(Hint: PubMed will give you 3 articles...this does better)')
 
