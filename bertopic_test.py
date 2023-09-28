@@ -8,6 +8,15 @@ import streamlit.components.v1 as components
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
+
+st.html(
+    """<meta name="description" content="_" />
+<meta name="title" property="og:title" content="_" />
+<meta property="og:type" content="_" />
+<meta name="image" property="og:image" content="data/forest_trees.jpg" />
+<meta name="description" property="og:description" content="_" /><meta name="author" content="_" />"""
+)
+
 # Load a pre-trained Sentence Transformer model
 model = SentenceTransformer("paraphrase-MiniLM-L6-v2")
 
