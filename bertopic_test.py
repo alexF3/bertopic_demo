@@ -9,7 +9,7 @@ from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 
 
-st.html(
+components.html(
     """<meta name="description" content="_" />
 <meta name="title" property="og:title" content="_" />
 <meta property="og:type" content="_" />
