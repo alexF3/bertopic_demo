@@ -183,8 +183,10 @@ This app was developed using [Google Colab](https://colab.research.google.com) f
 
 I used the sentence transformer "all-MiniLM-L6-v2" to produce embeddings of the abstracts in the corpus.  The BERT approach requires little to no pre-processing, which makes for fast development cycles.  I used the UMAP library to reduce the dimensions of the corpus embedding and the HDBSCAN library to cluster the resulting vectors with a minimum cluster size of 20 documents.  I then used the PartOfSpeech representation model to select the most important words in each topical cluster.
 
-I was able to save the resulting topic model without the embeddings, which came in at under 8 MB.  
+I was able to save the resulting topic model without the embeddings, which came in at under 8 MB.""")
+st.image("data/cluster_view.png")
 
+st.markdown("""
 For the demo, I set up a Streamlit app to transform user input text in the same way that the embeddings the model is based on were transformed.  BERTopic's find_topics method is then used to find topics in the model with a probability of matching of at least 0.1 (this is tunable depending on whether you want to cast a wider or narrower net).  
 
 With matching topics captured, I then use the wordcloud library to generate a word cloud of the highest TF-IDF words in all of the documents in each topic.
