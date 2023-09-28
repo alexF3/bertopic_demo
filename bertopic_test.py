@@ -169,7 +169,7 @@ BERTopic can be used to create modular, reusable pipelines that are readily tuna
 
 Imagine you're a senior FDA official overseeing panels of expert physicians who advise the administration on policy matters around specific drugs or devices.  You're not able to read every paper on every product, but you want to come into meetings with a sense of where the research around the given drug is in terms of themes and trends.  When faced with potentially dangerous drugs like Purdue Pharma's Oxycontin, you want to be sure that you have an independent sense of whether the broader medical research community is raising any alarms.
 
-You don't have time to read three thousand abstracts.  You want to rapidly get a sense of emerging themes over time.
+**You don't have time to read three thousand abstracts.  You want to rapidly get a sense of emerging themes over time.**
 
 BERTopic can help with that!
 
