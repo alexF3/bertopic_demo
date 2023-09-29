@@ -147,8 +147,10 @@ with tab2:
 ### BERTopic Overview
 This demo uses a pre-trained topic model created using the [BERTopic](https://maartengr.github.io/BERTopic/index.html) Python library.  The library uses a set of modular tools to facilitate the use of language models from the [HuggingFace API](https://huggingface.co/models) in surfacing themes in free text corpora.
 
-Bertopic was developed by [Maarten Grootendorst](https://www.maartengrootendorst.com/) and introduced in [this](https://arxiv.org/abs/2203.05794) 2022 paper.  The most important thing that you need to know about BERTopic is that it's based on an NLP approach called Bidirectional Encoder Representations from Transformers (BERT) which was [introduced](https://arxiv.org/abs/1810.04805) by scientists from Google in 2018.  BERT differs from many other topic modeling approaches in that it retains the context before and after a given word.  Traditional NLP methodologies like Latent Derichlet Allocation (LDA) use a "bag-of-words" approach in which the document "Dog bites man" encodes the same way as the document "Man bites dog."  BERT avoids this problem.
+Bertopic was developed by [Maarten Grootendorst](https://www.maartengrootendorst.com/) and introduced in [this](https://arxiv.org/abs/2203.05794) 2022 paper.  The most important thing that you need to know about BERTopic is that it's based on an NLP approach called Bidirectional Encoder Representations from Transformers (BERT) which was [introduced](https://arxiv.org/abs/1810.04805) by scientists from Google in 2018.  BERT differs from many other topic modeling approaches in that it retains the context before and after a given word.  Traditional NLP methodologies like Latent Derichlet Allocation (LDA) use a "bag-of-words" approach in which the document "Dog bites man" encodes the same way as the document "Man bites dog."  BERT avoids this problem."""
 
+st.image("data/cluster_view.png")
+st.markdown"""
 At a high level, BERTopic breaks down into a few steps:
 1. Transform the corpus of documents beings studied into vectors ("embeddings") using a language model the user selects
 2. Reduce the dimensionality of the resulting vectors
@@ -187,7 +189,7 @@ This app was developed using [Google Colab](https://colab.research.google.com) f
 I used the sentence transformer "all-MiniLM-L6-v2" to produce embeddings of the abstracts in the corpus.  The BERT approach requires little to no pre-processing, which makes for fast development cycles.  I used the UMAP library to reduce the dimensions of the corpus embedding and the HDBSCAN library to cluster the resulting vectors with a minimum cluster size of 20 documents.  I then used the PartOfSpeech representation model to select the most important words in each topical cluster.
 
 I was able to save the resulting topic model without the embeddings, which came in at under 8 MB.""")
-    st.image("data/cluster_view.png")
+    st.image("data/topics_over_time.png")
 
     st.markdown("""
 For the demo, I set up a Streamlit app to transform user input text in the same way that the embeddings the model is based on were transformed.  BERTopic's find_topics method is then used to find topics in the model with a probability of matching of at least 0.1 (this is tunable depending on whether you want to cast a wider or narrower net).  
